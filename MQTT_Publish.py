@@ -2,8 +2,8 @@
 
 import paho.mqtt.publish as publish
 
-# Publish test string Touch to topic topic/touch
-publish.single("topic/touch", "Touch", hostname="test.mosquitto.org")
+# Publish test string touch to topic topic/display1
+publish.single("topic/display1", "touch", hostname="test.mosquitto.org")
 
-# Publish test string Swipe to topic topic/swipe
-publish.single("topic/swipe", "Swipe", hostname="test.mosquitto.org")
+# Publish test string swipe to topic topic/display2
+publish.single("topic/display2", "swipe", hostname="test.mosquitto.org")
