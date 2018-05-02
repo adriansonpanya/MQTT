@@ -5,18 +5,18 @@ import paho.mqtt.client as mqtt
 # Callback when client receives respond from server
 def on_connection(client, userdata, flags, rc):
 	print("Connected successful "+str(rc))
-	client.subscribe("topic/touch")
-	client.subscribe("topic/swipe")
+	client.subscribe("topic/display1")
+	client.subscribe("topic/display2")
 
 # Callback when PUBLISH message is received 
 def on_message(client, userdata, msg):
 	print(msg.topic +" "+str(msg.payload))
-	if msg.payload == "Touch":
-		print("RECEIVED message: TOUCH > Change VariantSet01")
+	if msg.payload == "touch":
+		print("RECEIVED message: TOUCH")
 	
-	if msg.payload == "Swipe":
-		print("RECEIVED message: Swipe > Change Menu")
-	else:
+	if msg.payload == "swipe":
+		print("RECEIVED message: Swipe")
+	elif:
                 print("Wrong message received " + str(msg.payload))
 
 # Creates MQTT client and attaches custom functions
